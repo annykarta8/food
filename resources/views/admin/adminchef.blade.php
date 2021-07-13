@@ -11,25 +11,26 @@
 
 <body>
     <div class="container-scroller">
+
         @include('admin.navbar')
-        <form action="{{ url('uploadchef') }}" method="POST" enctype="multipart/form-data">
-            @csrf
-            <div>
-                <label>Name:</label>
-                <input class="text-black" type="text" name="name" required="" placeholder="Entet Name">
-            </div>
-            <div>
-                <label>Speciality:</label>
-                <input class="text-black" type="text" name="speciality" required="" placeholder="Entet the speciality">
-            </div>
-            <div>
-                <label>Image:</label>
-                <input type="file" name="image" required="">
-            </div>
-            <div>
-                <input style="background-color:#009FCC;border-radius:5px;width:80px;" type="submit" value="Save">
-            </div>
-        </form>
+        <button><a href="{{ url('/createchef') }}">Create</a></td></button>
+        <table style="background-color:black">
+            <tr>
+                <th class="p-3">Chef Name</th>
+                <th class="p-3">Speciality</th>
+                <th class="p-3">Image</th>
+                <th class="p-3">Action</th>
+            </tr>
+            @foreach($data as $data)
+            <tr align="center">
+                <td>{{ $data->name }}</td>
+                <td>{{ $data->speciality }}</td>
+                <td><img height="100" width="100" src="/chefimage/{{ $data->image }}"></td>
+                <td><a href="{{ url('/updatechef',$data->id) }}">Update</a></td>
+                <td><a href="{{ url('/deletechef',$data->id) }}">Delete</a></td>
+            </tr>
+            @endforeach
+        </table>
     </div>
     @include('admin.adminscript')
 </body>
