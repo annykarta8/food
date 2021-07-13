@@ -14,9 +14,9 @@
 </head>
 
 <body>
-    <div class="container-scroller">
+    <div class="container-scroller h-screen">
         @include('admin.navbar')
-        <div style="position:relative;top:60px;right:-150px">
+        <div style="position:relative;margin-top:40px;right:-150px">
             <div>
                 <button><a href="{{ url('/createview') }}">Create</a></td></button>
                 <table style="background-color: #444444;margin-top:30px">
@@ -38,7 +38,8 @@
                         <td>{{ $data->description }}</td>
                         <td><img height="80" width="80" src="/foodimage/{{ $data->image }}" </td> <td><a
                                 href="{{ url('/deletemenu',$data->id) }}">Delete</a>
-                            <a href="{{ url('/updateview',$data->id) }}">Update</a></td>
+                        </td>
+                        <td><a href="{{ url('/updateview',$data->id) }}">Update</a></td>
                     </tr>
                     @endforeach
                 </table>
