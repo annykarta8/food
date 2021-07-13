@@ -1,8 +1,9 @@
 <!-- partial:partials/_sidebar.html -->
 <nav class="sidebar sidebar-offcanvas" id="sidebar">
     <div class="sidebar-brand-wrapper d-none d-lg-flex align-items-center justify-content-center fixed-top">
-        <a class="sidebar-brand brand-logo" href="index.html"><img src="assets/images/klassy-logo.png"></a>
-        <a class="sidebar-brand brand-logo-mini" href="index.html"><img src="assets/images/klassy-logo.png"></a>
+        <a class="sidebar-brand brand-logo" href="http://food.test:6080/"><img src="assets/images/klassy-logo.png"></a>
+        <a class="sidebar-brand brand-logo-mini" href="http://food.test:6080/"><img
+                src="assets/images/klassy-logo.png"></a>
     </div>
     <ul class="nav">
         <li class="nav-item nav-category">
@@ -26,7 +27,7 @@
             </a>
         </li>
         <li class="nav-item menu-items">
-            <a class="nav-link" href="pages/tables/basic-table.html">
+            <a class="nav-link" href="{{ url('/viewchef') }}">
                 <span class="menu-icon">
                     <i class="mdi mdi-table-large"></i>
                 </span>
