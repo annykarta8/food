@@ -14,24 +14,27 @@
             <div class="owl-menu-item owl-carousel">
                 @foreach ($data as $data)
 
+                <form action="{{ url('/addcart',$data->id) }}" method="post">
+                    @csrf
 
-
-
-                <div class="item">
-                    <div class='card card1' style="background-image: url('/foodimage/{{ $data->image }}')">
-                        <div class="price">
-                            <h6>{{ $data->price }}</h6>
-                        </div>
-                        <div class='info'>
-                            <h1 class='title'>{{ $data->title }}</h1>
-                            <p class='description'>{{ $data->description }}</p>
-                            <div class="main-text-button">
-                                <div class="scroll-to-section"><a href="#reservation">Make Reservation <i
-                                            class="fa fa-angle-down"></i></a></div>
+                    <div class="item">
+                        <div class='card card1' style="background-image: url('/foodimage/{{ $data->image }}')">
+                            <div class="price">
+                                <h6>{{ $data->price }}</h6>
+                            </div>
+                            <div class='info'>
+                                <h1 class='title'>{{ $data->title }}</h1>
+                                <p class='description'>{{ $data->description }}</p>
+                                <div class="main-text-button">
+                                    <div class="scroll-to-section"><a href="#reservation">Make Reservation <i
+                                                class="fa fa-angle-down"></i></a></div>
+                                </div>
                             </div>
                         </div>
+                        <input type="number" name="quantity" min="1" value="1" style="border: 1px solid black">
+                        <input type="submit" value="addcart">
                     </div>
-                </div>
+                </form>
                 @endforeach
                 {{--  <div class="item">
                     <div class='card card2'>

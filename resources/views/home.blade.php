@@ -13,7 +13,7 @@
         rel="stylesheet">
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
 
-    <title>Klassy Cafe - Restaurant HTML Template</title>
+    <title>Klassy Cafe </title>
     <!--
 
 TemplateMo 558 Klassy Cafe
@@ -88,6 +88,17 @@ https://templatemo.com/tm-558-klassy-cafe
                             </li>
                             <!-- <li class=""><a rel="sponsored" href="https://templatemo.com" target="_blank">External URL</a></li> -->
                             <li class="scroll-to-section"><a href="#reservation">Contact Us</a></li>
+
+                            <li class="scroll-to-section"><a href="#reservation">
+                                    @auth
+                                    <a href="{{ url('/showcart',Auth::user()->id) }}">
+                                        <i class="fa fa-cart-arrow-down">({{$count}})</i></a>
+                                    @endauth
+                                    @guest
+                                    <i class="fa fa-cart-arrow-down">(0)</i>
+                                    @endguest
+                                </a></li>
+
                             <li>
                                 @if (Route::has('login'))
                                 <div class="hidden fixed top-0 right-0 px-6 py-4 sm:block">
